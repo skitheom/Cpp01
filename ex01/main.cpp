@@ -6,13 +6,15 @@
 /*   By: sakitaha <sakitaha@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 20:10:44 by sakitaha          #+#    #+#             */
-/*   Updated: 2024/11/23 20:24:36 by sakitaha         ###   ########.fr       */
+/*   Updated: 2024/12/03 15:17:00 by sakitaha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <cstdlib>
 #include <iostream>
+#include <limits>
+#include <sstream>
 
 static void fatalError(const char *errorMsg) {
   std::cerr << errorMsg << std::endl;
@@ -46,7 +48,7 @@ static int getInputNum(const std::string &prompt) {
       fatalError("EOF");
     if (std::cin.fail()) {
       std::cin.clear();
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+      std::cin.ignore(std::numeric_limits<std ::streamsize>::max(), '\n');
       std::cout << "Error: Failed to receive input" << std::endl;
       continue;
     }
@@ -61,15 +63,14 @@ static int getInputNum(const std::string &prompt) {
 
 int main(void) {
   int n = getInputNum("Number of zombies: ");
-  try {
-    Zombie *zombies = zombieHorde(n, getInputStr("Name of your zombies: "));
-    for (int i = 0; i < n; i++) {
-      zombies[i].announce();
-    }
-    delete[] zombies;
-  } catch (const std::bad_alloc &e) {
-    std::cerr << "Error: Memory allocation failed" << std::endl;
+  Zombie *zombies = zombieHorde(n, getInputStr("Name of your zombies: "));
+  if (!zombies) {
+    std::cerr << "Error: Failed to create zombie horde" << std::endl;
     return EXIT_FAILURE;
   }
+  for (int i = 0; i < n; i++) {
+    zombies[i].announce();
+  }
+  delete[] zombies;
   return EXIT_SUCCESS;
 }

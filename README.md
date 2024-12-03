@@ -39,39 +39,3 @@ Harl クラスを作成し、4つのログレベルでメッセージを出力
 
 Harl のログをフィルタリングするプログラム
 コマンドライン引数と、switch文
-
-
-sakitaha@c5r4s4 ~/g/C/C/ex01 (main) [2]> make
-c++ -Wall -Wextra -Werror -std=c++98 -c main.cpp -o main.o
-main.cpp:31:28: error: no member named 'numeric_limits' in namespace 'std'
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                      ~~~~~^
-main.cpp:31:58: error: expected '(' for function-style cast or type construction
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                                          ~~~~~~~~~~~~~~~^
-main.cpp:31:61: error: no member named 'max' in the global namespace
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                                                          ~~^
-main.cpp:49:28: error: no member named 'numeric_limits' in namespace 'std'
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                      ~~~~~^
-main.cpp:49:58: error: expected '(' for function-style cast or type construction
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                                          ~~~~~~~~~~~~~~~^
-main.cpp:49:61: error: no member named 'max' in the global namespace
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                                                          ~~^
-main.cpp:57:26: error: no member named 'numeric_limits' in namespace 'std'
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    ~~~~~^
-main.cpp:57:56: error: expected '(' for function-style cast or type construction
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                                        ~~~~~~~~~~~~~~~^
-main.cpp:57:59: error: no member named 'max' in the global namespace
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                                                        ~~^
-9 errors generated.
-make: *** [Makefile:26: main.o] Error 1
-sakitaha@c5r4s4 ~/g/C/C/ex01 (main) [2]>
-sakitaha@c5r4s4 ~/g/C/C/ex01 (main) [2]>
-sakitaha@c5r4s4 ~/g/C/C/ex01 (main) [2]>
