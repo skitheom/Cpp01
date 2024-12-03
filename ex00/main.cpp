@@ -6,13 +6,14 @@
 /*   By: sakitaha <sakitaha@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 19:06:40 by sakitaha          #+#    #+#             */
-/*   Updated: 2024/12/03 13:05:32 by sakitaha         ###   ########.fr       */
+/*   Updated: 2024/12/03 13:09:29 by sakitaha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <cstdlib>
 #include <iostream>
+#include <limits>
 #include <sstream>
 
 static void printError(const char *errorMsg) {
