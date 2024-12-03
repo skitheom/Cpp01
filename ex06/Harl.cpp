@@ -6,7 +6,7 @@
 /*   By: sakitaha <sakitaha@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 15:47:20 by sakitaha          #+#    #+#             */
-/*   Updated: 2024/11/29 17:14:22 by sakitaha         ###   ########.fr       */
+/*   Updated: 2024/12/03 15:42:23 by sakitaha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,13 @@ void Harl::filter(std::string level) {
   switch (getLogLevel(level)) {
   case DEBUG:
     complain(DEBUG);
+    // fall through
   case INFO:
     complain(INFO);
+    // fall through
   case WARNING:
     complain(WARNING);
+    // fall through
   case ERROR:
     complain(ERROR);
     break;
