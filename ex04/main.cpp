@@ -6,10 +6,11 @@
 /*   By: sakitaha <sakitaha@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:16:18 by sakitaha          #+#    #+#             */
-/*   Updated: 2024/11/28 21:16:24 by sakitaha         ###   ########.fr       */
+/*   Updated: 2024/12/03 15:37:49 by sakitaha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -55,12 +56,9 @@ int main(int argc, const char *argv[]) {
   if (!validate_argv(argc, argv)) {
     return EXIT_FAILURE;
   }
-
-  const std::string inFileName = std::string(argv[1]);
   const std::string outFileName = std::string(argv[1]) + ".replace";
-
-  std::ifstream inFile(inFileName);
-  std::ofstream outFile(outFileName);
+  std::ifstream inFile(argv[1]);
+  std::ofstream outFile(outFileName.c_str());
   try {
     if (!inFile.is_open()) {
       throw std::runtime_error("Error: Failed to open input file");
